@@ -23,7 +23,7 @@ for i in $TO_TEST; do
   RESULTS="$RESULTS \n$TEST exit status: $?";
 done
 
-echo "\n\n Results: $RESULTS";
+echo -e "\n\n Results: $RESULTS";
 
 exit $EXIT_STATUS;
 
