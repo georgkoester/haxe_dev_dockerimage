@@ -9,7 +9,7 @@ cd haxe_repo || (echo "Repo not found: Run with docker run -v /your/haxe/repo/gi
 make
 make tools
 make install
-cd tests # HAVE TO go into tests before using haxelib! Else wierd errors...
+cd tests # HAVE TO go into tests before using haxelib! Else weird errors...
 mkdir -p ~/haxelib && haxelib setup ~/haxelib
 haxelib git hx-yaml https://github.com/mikestead/hx-yaml master src
 haxe -version
