@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TO_TEST="neko js php java cpp";
+TO_TEST="neko js php java cpp cs";
 if [ -z ${1+x} ]; then
   #run all
   echo "no argument given, running all";
