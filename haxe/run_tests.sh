@@ -15,6 +15,9 @@ echo "running $TO_TEST";
 cd haxe_repo/tests
 for i in $TO_TEST; do
   export TEST=$i;
+  if [ "$i" = "php" ]; then
+    /etc/init.d/mysql start;
+  fi
   neko RunCi.n;
   THIS_RUN_STATUS=$?;
   if [ $THIS_RUN_STATUS != 0 ]; then

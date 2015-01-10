@@ -19,8 +19,12 @@ RUN apt-get install -yq oracle-java8-installer # could clean /var/cache/oracle-j
 # haxe dependencies (see .travis.yml and experience)
 RUN apt-get install -y  ocaml zlib1g-dev libgc-dev neko mysql-server git sqlite3 libsqlite3-dev libpcre3 libpcre3-dev && apt-get clean
 
-# optional, this is also installed during cpp test run, but here you could integrate it in the docker image:
-RUN apt-get install -y gcc-multilib g++-multilib php5 && apt-get clean
+# optional, sets up mysql for php test
+# some packages also installed during test run, but here you can integrate them in the docker image, reducing container size.
+# Mysql is necessary to run php tests.
+RUN apt-get install -y gcc-multilib g++-multilib php5 php5-mysql php5-sqlite mysql-server && apt-get clean
+RUN /etc/init.d/mysql start && mysql -u root -e 'create database haxe_test;' && mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'travis'@'localhost';"
+# END optional 
 
 ADD haxe /haxe
 
