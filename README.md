@@ -73,9 +73,12 @@ cs exit status: 0
 root@87f07126d202:/haxe#
 ```
 
-Oh, seems your code broke the php target's tests! Check logs, ```./build.sh``` and run php tests again: ```./run_tests.sh php```
+Oh, seems your code broke the php target's tests! 
+
+Next steps: Check logs, ```./build.sh``` and run php tests again: ```./run_tests.sh php```
 
 Enjoy!
+
 Georg
 
 ### Supported test targets out of the box
