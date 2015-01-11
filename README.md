@@ -94,6 +94,10 @@ Georg
  * flash9 target unsupported (not investigated yet)
  * Runs on linux - windows and macosx platforms not tested (travis and appveyor do this if you create a pull request to the haxe repo)
 
+### Why?
+ * I didn't run unit tests for a long time because I didn't get them running quickly and didn't want to spend the time - with this docker image and the scripts that go with it that problem is gone. Before I created this image I relied on the Travis continuous integration running for the haxe repo for running tests has a very slow turnaround, blocks the travis resource for more important test runs and creates clutter in your pull requests.  
+ * I also didn't want to mess around with a VM - docker images and containers are much more lightweight and easier to clean away, start, stop and can also be paused (of course VMs are cool: My docker environment runs in a VM - but I refrain from running tons of VMs :) ) 
+
 ### Optional
  * Speed up creation of initial docker image by commenting unrequired targets in the ```Dockerfile```. They are enclosed in ```optionalN``` comments.
 But choose wisely: If you really want to save space you get the inverse effect if you later run the tests in the docker container, because then the
