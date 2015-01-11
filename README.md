@@ -1,8 +1,9 @@
-# Docker image for smoke testing [haxe](http://haxe.org) contributions
+# [Docker](https://www.docker.com/) image for smoke testing [haxe](http://haxe.org) contributions
 
 Simply:
- * have a haxe repo clone on your linux box or create one with ```git clone https://github.com/HaxeFoundation/haxe.git haxe_repo```
- * run ```docker build -t my_haxe_repo_dev_image .```
+ * have a haxe repo clone on your linux box or create one with ```git clone https://github.com/HaxeFoundation/haxe.git haxe_repo``` (you might have done this already)
+ * install docker and clone this repo: ```git clone https://github.com/georgkoester/haxe_dev_dockerimage.git```
+ * ```cd haxe_dev_dockerimage``` and run ```docker build -t my_haxe_repo_dev_image .```
  * start image with ```docker run -ti -v /path/to/your/haxe_repo:/haxe/haxe_repo my_haxe_repo_dev_image /bin/bash```
  * do in image: ```cd haxe; bash smoke_test.sh```
  * run selected targets: ```bash run_tests.sh php``` or ```bash run_tests.sh neko php cpp```
